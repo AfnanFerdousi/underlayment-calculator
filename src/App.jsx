@@ -22,11 +22,13 @@ const App = () => {
     }
 
     const underlaymentLength = 2 * pondDepth + pondLength + 1;
-    const underlaymentWidth = 2 * pondDepth + pondWidth + 1;
+
+    // Calculate underlayment width and round up to the nearest number (10, 12, or 15)
+    const rawUnderlaymentWidth = 2 * pondDepth + pondWidth + 1;
+    const roundedUnderlaymentWidth = Math.min(Math.ceil(rawUnderlaymentWidth / 3) * 3, 15);
 
     setUnderLaymentLength(underlaymentLength);
-    setUnderLaymentWidth(underlaymentWidth);
-
+    setUnderLaymentWidth(roundedUnderlaymentWidth);
 
     setError(""); // Reset error state if calculation is successful
   };
