@@ -25,12 +25,18 @@ const App = () => {
 
     // Calculate underlayment width and round up to the nearest number (10, 12, or 15)
     const rawUnderlaymentWidth = 2 * pondDepth + pondWidth + 1;
-    const roundedUnderlaymentWidth = Math.min(Math.ceil(rawUnderlaymentWidth / 3) * 3, 15);
+    const multiplicationOfLengthAndWidth = underlaymentLength * rawUnderlaymentWidth;
 
-    setUnderLaymentLength(underlaymentLength);
-    setUnderLaymentWidth(roundedUnderlaymentWidth);
+    const roundedUnderlaymentWidth = [10, 12, 15].reduce((prev, curr) => (
+      Math.abs(curr - rawUnderlaymentWidth) < Math.abs(prev - rawUnderlaymentWidth) ? curr : prev
+    ));
 
-    setError(""); // Reset error state if calculation is successful
+    const finalUnderLaymentLength = multiplicationOfLengthAndWidth / roundedUnderlaymentWidth;
+
+    setUnderLaymentLength(finalUnderLaymentLength.toFixed(2));
+    setUnderLaymentWidth(roundedUnderlaymentWidth.toFixed(2));
+
+    setError(""); 
   };
 
   useEffect(() => {
