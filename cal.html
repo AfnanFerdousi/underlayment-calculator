@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Linking the external JavaScript file -->
+    <script type="text/javascript" src="calc.js"></script>
+</head>
+
+<body>
+    <div class="EvenLeft">
+        <div class="calc-module">
+            <h4>Underlayment Calculator</h4>
+            <form class="calcflex" action="/" name="input3B">
+                <div class="form__group field">
+                    <input id="length" class="form__field" type="number" name="length" onchange="Input3B(value)"/>
+                    <label class="form__label" for="length">Pond Length</label>
+                </div>
+                <div class="form__group field">
+                    <input id="width" class="form__field" type="number" name="width" onchange="Input3B(value)"/>
+                    <label class="form__label" for="width">Pond Width</label>
+                </div>
+                <div class="form__group field">
+                    <input id="depth" class="form__field" type="number" name="depth" onchange="Input3B(value)"/>
+                    <label class="form__label" for="Depth">Pond Depth</label>
+                </div>
+            </form>
+            <form action="/" name="output3B">
+                <div><input class="calcbutton" onclick="Calc3B()" type="button" value="Calculate Underlayment Size" /></div>
+                <div class="calcflex">
+                    
+                    <div class="form__group field">
+                        <input id="linerlength" class="form__field" type="text" name="linerlength" /> 
+                        <label class="form__label" for="linerlength">Underlayment Length</label>
+                    </div>
+                    <div class="form__group field">
+                        <input id="linerwidth" class="form__field" type="text" name="linerwidth" /> 
+                        <label class="form__label" for="linerwidth">Underlayment Width</label>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
